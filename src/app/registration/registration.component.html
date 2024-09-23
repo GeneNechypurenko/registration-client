@@ -1,0 +1,48 @@
+<form (ngSubmit)="register()" #registrationForm="ngForm">
+  <h2>Registration</h2>
+  <div class="form-group">
+    <span id="registration-email-validation" class="validation" *ngIf="registrationForm.controls['email']?.invalid && registrationForm.controls['email']?.touched">
+      Email is required
+    </span>
+    <input id="registration-email" [(ngModel)]="email" name="email" type="text" placeholder="Enter Email" required>
+  </div>
+  <div class="form-group">
+    <span id="registration-password-validation" class="validation" *ngIf="registrationForm.controls['password']?.invalid && registrationForm.controls['password']?.touched">
+      Password is required
+    </span>
+    <input id="registration-password" [(ngModel)]="password" name="password" type="password" placeholder="Enter password" required>
+  </div>
+  <div class="form-group">
+    <span id="registration-confirmation-validation" class="validation" *ngIf="registrationForm.controls['confirmPassword']?.invalid && registrationForm.controls['confirmPassword']?.touched">
+      Confirm Password is required
+    </span>
+    <input id="registration-confirmation" [(ngModel)]="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password" required>
+  </div>
+  <div class="form-group">
+    <span id="registration-username-validation" class="validation" *ngIf="registrationForm.controls['username']?.invalid && registrationForm.controls['username']?.touched">
+      Username is required
+    </span>
+    <input id="registration-username" [(ngModel)]="username" name="username" type="text" placeholder="Enter Username" required>
+  </div>
+  <div class="form-group">
+    <span id="registration-name-validation" class="validation" *ngIf="registrationForm.controls['name']?.invalid && registrationForm.controls['name']?.touched">
+      Name is required
+    </span>
+    <input id="registration-name" [(ngModel)]="name" name="name" type="text" placeholder="Enter Your Name" required>
+  </div>
+  <div class="form-group">
+    <span id="registration-secondname-validation" class="validation" *ngIf="registrationForm.controls['secondName']?.invalid && registrationForm.controls['secondName']?.touched">
+      Second Name is required
+    </span>
+    <input id="registration-secondname" [(ngModel)]="secondName" name="secondName" type="text" placeholder="Enter Your Second Name" required>
+  </div>
+  <div class="radio-group" required>
+    <span>Gender is required</span>
+    <input type="radio" [(ngModel)]="gender" name="gender" value="Male" required> Male
+    <input type="radio" [(ngModel)]="gender" name="gender" value="Female" required> Female
+  </div>
+  <div class="button-group">
+    <button class="submit" type="submit" [disabled]="registrationForm.invalid">Register</button>
+    <button class="reset" type="reset">Reset</button>
+  </div>
+</form>

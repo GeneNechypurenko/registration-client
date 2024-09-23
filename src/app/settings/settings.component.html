@@ -1,0 +1,36 @@
+<form (ngSubmit)="updateUser()" #userForm="ngForm">
+    <h2>Settings</h2>
+    <div class="form-group">
+      <span id="settings-email-validation" class="validation" *ngIf="email && !email.includes('@')">Invalid email format</span>
+      <input id="settings-email" type="text" [(ngModel)]="email" name="email" placeholder="Enter Email" required>
+    </div>
+    <div class="form-group">
+      <span id="settings-password-validation" class="validation" *ngIf="password && password.length < 6">Password must be at least 6 characters</span>
+      <input id="settings-password" type="password" [(ngModel)]="password" name="password" placeholder="Enter Password">
+    </div>
+    <div class="form-group">
+      <span id="settings-confirmation-validation" class="validation" *ngIf="password !== confirmPassword">Passwords do not match</span>
+      <input id="settings-confirmation" type="password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+    </div>
+    <div class="form-group">
+      <span id="settings-username-validation" class="validation" *ngIf="username && username.length < 3">Username must be at least 3 characters</span>
+      <input id="settings-username" type="text" [(ngModel)]="username" name="username" placeholder="Enter Username" required>
+    </div>
+    <div class="form-group">
+      <span id="settings-name-validation" class="validation" *ngIf="!name">Name is required</span>
+      <input id="settings-name" type="text" [(ngModel)]="name" name="name" placeholder="Enter Your Name" required>
+    </div>
+    <div class="form-group">
+      <span id="settings-secondname-validation" class="validation" *ngIf="!secondName">Second Name is required</span>
+      <input id="settings-secondname" type="text" [(ngModel)]="secondName" name="secondName" placeholder="Enter Your Second Name" required>
+    </div>
+    <div class="radio-group">
+      <span>Gender:</span>
+      <input type="radio" [(ngModel)]="gender" name="gender" value="Male"> Male
+      <input type="radio" [(ngModel)]="gender" name="gender" value="Female"> Female
+    </div>
+    <div class="button-group">
+      <button class="submit" type="submit" [disabled]="userForm.invalid">Update</button>
+      <button class="reset" type="reset">Reset</button>
+    </div>
+</form>

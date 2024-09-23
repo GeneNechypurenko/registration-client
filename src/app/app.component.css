@@ -1,0 +1,66 @@
+header {
+    height: 40px;
+    width: 60%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff30;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 1rem #252525;
+}
+
+nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    letter-spacing: .5px;
+    outline: none;
+    border: none;
+}
+
+main {
+    height: calc(100% - 40px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.background .shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.shape:first-child {
+    background: linear-gradient(to right, #E100FF, #7F00FF);
+    left: -80px;
+    top: -80px;
+}
+
+.shape:last-child {
+    background: linear-gradient(to right, #f7b733, #fc4a1a);
+    right: -80px;
+    bottom: -80px;
+}
